@@ -34,13 +34,14 @@ async function findCountries(continent) {
     // Slice A: set the countries state to the response.data
     countries = foundCountries.data;
     // Slice A: call displayCountries function;
-    displayCountries();
+    displayCountries(continent);
 }
 
 searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const formData = new FormData(searchForm);
     // Slice C: Call findCountries with continent from formData
+    findCountries(continentSelect.value);
 });
 
 /* Display Functions */
